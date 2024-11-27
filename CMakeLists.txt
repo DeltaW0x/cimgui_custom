@@ -16,3 +16,11 @@ imgui/backends/imgui_impl_sdl3.cpp)
 
 add_library(cimgui SHARED ${SOURCES})
 target_link_libraries(cimgui PUBLIC SDL3-shared)
+
+
+install(
+    TARGETS cimgui
+    EXPORT cimgui
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
